@@ -66,6 +66,7 @@ def main():
 
             st.write("Data from the CSV file:")
             st.dataframe(df)
+            st.write(df[2])
         # st.file_uploader("Upload an image to be segmented", type=["png", "jpeg", "jpg"], key = "img_raw")
         # if "img" not in st.session_state:
         #     st.session_state["img"] = 0
