@@ -52,7 +52,8 @@ def main():
                 label="Download CSV",
                 data=df.to_csv(index=False),
                 file_name="data.csv",
-                key="download_button"
+                key="download_button", 
+                use_container_width = True
             )
         with col2:
             st.markdown("<h2 style='text-align: center;'>Please upload the filled data for processing</h2>", unsafe_allow_html=True)
