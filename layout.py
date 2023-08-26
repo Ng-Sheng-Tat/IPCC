@@ -60,15 +60,14 @@ def main():
             uploaded_file = st.file_uploader("", type=["csv"])
 
         if uploaded_file is not None:
-            st.write("File uploaded")
-
+            st.markdown("<h4 style='text-align: center;'>File uploaded</h4>", unsafe_allow_html=True)
             # Read the uploaded CSV file using Pandas
             df = pd.read_csv(uploaded_file)
 
-            st.write("Data from the CSV file:")
-            st.dataframe(df)
-            st.write(df.iloc[2][1])
-            print(df.iloc[2][1])
+            # st.write("Data from the CSV file:")
+            # st.dataframe(df)
+            # st.write(df.iloc[2][1])
+            # print(df.iloc[2][1])
         # st.file_uploader("Upload an image to be segmented", type=["png", "jpeg", "jpg"], key = "img_raw")
         # if "img" not in st.session_state:
         #     st.session_state["img"] = 0
