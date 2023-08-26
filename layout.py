@@ -45,14 +45,27 @@ def main():
         """, unsafe_allow_html=True)
 
     with input_:
-        st.markdown("<h2 style='text-align: center;'>Please download the CSV template and upload the relevant information 📥</h2>", unsafe_allow_html=True)
-        st.download_button(
-            label="Download CSV",
-            data=df.to_csv(index=False),
-            file_name="data.csv",
-            key="download_button"
-        )
+        col1, col2 = st.columns(2)
+        with col1:
+            st.markdown("<h2 style='text-align: center;'>Please download the CSV template for filling the required data</h2>", unsafe_allow_html=True)
+            st.download_button(
+                label="Download CSV",
+                data=df.to_csv(index=False),
+                file_name="data.csv",
+                key="download_button"
+            )
+        with col2:
+            st.markdown("<h2 style='text-align: center;'>Please upload the filled data for processing</h2>", unsafe_allow_html=True)
+            uploaded_file = st.file_uploader("Upload the filled CSV file", type=["csv"])
 
+        if uploaded_file is not None:
+            st.write("File uploaded")
+
+            # Read the uploaded CSV file using Pandas
+            df = pd.read_csv(uploaded_file)
+
+            st.write("Data from the CSV file:")
+            st.dataframe(df)
         # st.file_uploader("Upload an image to be segmented", type=["png", "jpeg", "jpg"], key = "img_raw")
         # if "img" not in st.session_state:
         #     st.session_state["img"] = 0
