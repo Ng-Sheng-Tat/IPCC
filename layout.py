@@ -3,8 +3,7 @@ import streamlit as st
 
 def main():
     st.set_page_config(layout="wide",page_title="CO2 Decarbonization through Supply Chain Optimization",page_icon="📈",)
-    st.session_state
-    st.markdown("<h1 style='text-align: center;'>Line Curve Digitalization</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center;'>CO2 Decarbonization through Supply Chain Optimization</h1>", unsafe_allow_html=True)
 
     desc, input_, output_ = st.tabs(["Description", "Input", "Output"])
     css = """
@@ -17,17 +16,27 @@ def main():
         # Render the custom CSS
     st.markdown(css, unsafe_allow_html=True)
 
-    with st.sidebar:
-        st.markdown("<h2 style='text-align: center;'> <strong>Input<strong> </h2>", unsafe_allow_html=True)
+    # with st.sidebar:
+    #     st.markdown("<h2 style='text-align: center;'> <strong>Input<strong> </h2>", unsafe_allow_html=True)
         
     with desc:
         st.markdown("<h2 style='text-align: center;'>Functionality Description 📜</h2>", unsafe_allow_html=True)
         st.markdown("""<h4 style='text-align: justify;'>Mixed Linear Integer Optimization Algorithm.</h4>""", unsafe_allow_html=True)
         st.markdown("""
         <ul>
-        <li style="font-size: 20px;"><strong>Input<strong>: Images, Axes-Range</li>
-        <li style="font-size: 20px;"><strong>Output<strong>: Choosen data points containing the digitized curve in CSV format</li>
+        <li style="font-size: 20px;"><strong>Input<strong>: Initial Demands, Growths, Yield, CO2 Emissions, Total Annualised Cost, Maximum Capacity, CO2 Target</li>
+        <li style="font-size: 20px;"><strong>Output<strong>: Number of installed technologies, Total TAC, Total CO2 </li>
+        <li style="font-size: 20px;"><strong>Objective Functions<strong>: Minimize Total Annualized Cost</li>
+        <li style="font-size: 20px;"><strong>Decision Variable: <strong>: Number of installed technologies</li>
+        <li style="font-size: 20px;"><strong>Constraints: <strong>
+                    <ul>
+                    <li style="font-size: 20px;">CO2 Target Fulfillment</li>
+                    <li style="font-size: 20px;">Maximum Installed Capacity</li>
+                    <li style="font-size: 20px;">Supply Meeting Demand</li>
+                    </ul>
+                    </li>                            
         </ul>
+                    
         """, unsafe_allow_html=True)
         st.markdown("""
             <blockquote style="font-size: 18px;">
