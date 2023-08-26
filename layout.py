@@ -57,7 +57,7 @@ def main():
             )
         with col2:
             st.markdown("<h4 style='text-align: center;'>Please upload the filled data for processing</h4>", unsafe_allow_html=True)
-            uploaded_file = st.file_uploader("Upload the filled CSV file", type=["csv"])
+            uploaded_file = st.file_uploader("", type=["csv"])
 
         if uploaded_file is not None:
             st.write("File uploaded")
