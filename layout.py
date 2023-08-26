@@ -60,9 +60,10 @@ def main():
             uploaded_file = st.file_uploader("", type=["csv"])
 
         if uploaded_file is not None:
-            st.markdown("<h4 style='text-align: center;'>File uploaded</h4>", unsafe_allow_html=True)
-            # Read the uploaded CSV file using Pandas
-            df = pd.read_csv(uploaded_file)
+            with col2:
+                st.markdown("<h4 style='text-align: center;'>File uploaded</h4>", unsafe_allow_html=True)
+                # Read the uploaded CSV file using Pandas
+                df = pd.read_csv(uploaded_file)
 
             # st.write("Data from the CSV file:")
             # st.dataframe(df)
