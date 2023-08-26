@@ -47,7 +47,7 @@ def main():
     with input_:
         col1, col2 = st.columns(2)
         with col1:
-            st.markdown("<h2 style='text-align: center;'>Please download the CSV template for filling the required data</h2>", unsafe_allow_html=True)
+            st.markdown("<h4 style='text-align: center;'>Please download the CSV template for filling the required data</h4>", unsafe_allow_html=True)
             st.download_button(
                 label="Download CSV",
                 data=df.to_csv(index=False),
@@ -56,7 +56,7 @@ def main():
                 use_container_width = True
             )
         with col2:
-            st.markdown("<h2 style='text-align: center;'>Please upload the filled data for processing</h2>", unsafe_allow_html=True)
+            st.markdown("<h4 style='text-align: center;'>Please upload the filled data for processing</h4>", unsafe_allow_html=True)
             uploaded_file = st.file_uploader("Upload the filled CSV file", type=["csv"])
 
         if uploaded_file is not None:
